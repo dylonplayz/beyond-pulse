@@ -1,0 +1,460 @@
+{
+  "source": "NASA OSDR RadLab API",
+  "source_url": "https://visualization.osdr.nasa.gov/radlab/api/",
+  "query": "spacecraft=ISS&instrument=DosTel&timestamp>=2022-04-02T23:00&timestamp<2022-04-03T00:00&absorbed_dose_rate",
+  "window_utc": "2022-04-02T23:00:00 to 2022-04-02T23:59:59",
+  "unit": "μGy/hour",
+  "caveat": "Historical environmental instrument sample. Not a personal crew dosimeter, not current telemetry, and not a health or safety threshold.",
+  "records": [
+    {
+      "timestamp": "2022-04-02T23:00:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 7.58926176038339
+    },
+    {
+      "timestamp": "2022-04-02T23:00:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 6.13067833333333
+    },
+    {
+      "timestamp": "2022-04-02T23:01:23",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 4.901709
+    },
+    {
+      "timestamp": "2022-04-02T23:01:37",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 4.345046
+    },
+    {
+      "timestamp": "2022-04-02T23:03:03",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.576332
+    },
+    {
+      "timestamp": "2022-04-02T23:03:17",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.533297
+    },
+    {
+      "timestamp": "2022-04-02T23:04:43",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.158982
+    },
+    {
+      "timestamp": "2022-04-02T23:04:57",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.160855
+    },
+    {
+      "timestamp": "2022-04-02T23:05:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.251578
+    },
+    {
+      "timestamp": "2022-04-02T23:05:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.27789328434505
+    },
+    {
+      "timestamp": "2022-04-02T23:06:23",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.01942
+    },
+    {
+      "timestamp": "2022-04-02T23:06:37",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.155446
+    },
+    {
+      "timestamp": "2022-04-02T23:08:03",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.390194
+    },
+    {
+      "timestamp": "2022-04-02T23:08:30",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.137752
+    },
+    {
+      "timestamp": "2022-04-02T23:09:55",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 1.855943
+    },
+    {
+      "timestamp": "2022-04-02T23:10:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.13598016504854
+    },
+    {
+      "timestamp": "2022-04-02T23:10:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.25695333333333
+    },
+    {
+      "timestamp": "2022-04-02T23:10:10",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.316554
+    },
+    {
+      "timestamp": "2022-04-02T23:11:35",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.133639
+    },
+    {
+      "timestamp": "2022-04-02T23:13:30",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.097185
+    },
+    {
+      "timestamp": "2022-04-02T23:14:55",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.043131
+    },
+    {
+      "timestamp": "2022-04-02T23:15:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.192711
+    },
+    {
+      "timestamp": "2022-04-02T23:15:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.15064370512821
+    },
+    {
+      "timestamp": "2022-04-02T23:15:10",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.12222
+    },
+    {
+      "timestamp": "2022-04-02T23:16:35",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.342291
+    },
+    {
+      "timestamp": "2022-04-02T23:16:50",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.223753
+    },
+    {
+      "timestamp": "2022-04-02T23:18:15",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.283067
+    },
+    {
+      "timestamp": "2022-04-02T23:18:42",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.649202
+    },
+    {
+      "timestamp": "2022-04-02T23:20:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.39396571794872
+    },
+    {
+      "timestamp": "2022-04-02T23:20:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 3.74053733333333
+    },
+    {
+      "timestamp": "2022-04-02T23:20:07",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.753018
+    },
+    {
+      "timestamp": "2022-04-02T23:20:22",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 4.477332
+    },
+    {
+      "timestamp": "2022-04-02T23:21:47",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.15912
+    },
+    {
+      "timestamp": "2022-04-02T23:22:02",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 4.095078
+    },
+    {
+      "timestamp": "2022-04-02T23:23:27",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 4.034307
+    },
+    {
+      "timestamp": "2022-04-02T23:23:42",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 7.635821
+    },
+    {
+      "timestamp": "2022-04-02T23:25:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 5.04897866666667
+    },
+    {
+      "timestamp": "2022-04-02T23:25:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 6.9263038974359
+    },
+    {
+      "timestamp": "2022-04-02T23:25:07",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 6.066061
+    },
+    {
+      "timestamp": "2022-04-02T23:25:22",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 6.286687
+    },
+    {
+      "timestamp": "2022-04-02T23:26:47",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 5.046568
+    },
+    {
+      "timestamp": "2022-04-02T23:27:02",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 6.863893
+    },
+    {
+      "timestamp": "2022-04-02T23:28:27",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 7.034519
+    },
+    {
+      "timestamp": "2022-04-02T23:28:54",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 7.133798
+    },
+    {
+      "timestamp": "2022-04-02T23:30:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 8.14469912820513
+    },
+    {
+      "timestamp": "2022-04-02T23:30:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 8.39353033333333
+    },
+    {
+      "timestamp": "2022-04-02T23:30:19",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 7.906574
+    },
+    {
+      "timestamp": "2022-04-02T23:30:34",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 8.597832
+    },
+    {
+      "timestamp": "2022-04-02T23:31:59",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 9.626226
+    },
+    {
+      "timestamp": "2022-04-02T23:32:14",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 9.448961
+    },
+    {
+      "timestamp": "2022-04-02T23:33:39",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 9.658376
+    },
+    {
+      "timestamp": "2022-04-02T23:33:54",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 9.385445
+    },
+    {
+      "timestamp": "2022-04-02T23:35:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 10.824002
+    },
+    {
+      "timestamp": "2022-04-02T23:35:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 11.0312987564103
+    },
+    {
+      "timestamp": "2022-04-02T23:35:19",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 11.746646
+    },
+    {
+      "timestamp": "2022-04-02T23:35:34",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 11.337826
+    },
+    {
+      "timestamp": "2022-04-02T23:36:59",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 11.066984
+    },
+    {
+      "timestamp": "2022-04-02T23:37:14",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 12.227126
+    },
+    {
+      "timestamp": "2022-04-02T23:38:39",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 12.739654
+    },
+    {
+      "timestamp": "2022-04-02T23:39:06",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 11.672328
+    },
+    {
+      "timestamp": "2022-04-02T23:40:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 12.0235235512821
+    },
+    {
+      "timestamp": "2022-04-02T23:40:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 12.132741
+    },
+    {
+      "timestamp": "2022-04-02T23:40:31",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 11.189365
+    },
+    {
+      "timestamp": "2022-04-02T23:40:46",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 12.593154
+    },
+    {
+      "timestamp": "2022-04-02T23:42:11",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 12.055616
+    },
+    {
+      "timestamp": "2022-04-02T23:42:26",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 11.409533
+    },
+    {
+      "timestamp": "2022-04-02T23:43:51",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 13.206288
+    },
+    {
+      "timestamp": "2022-04-02T23:44:06",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 11.905683
+    },
+    {
+      "timestamp": "2022-04-02T23:45:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 11.0333443333333
+    },
+    {
+      "timestamp": "2022-04-02T23:45:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 11.226042
+    },
+    {
+      "timestamp": "2022-04-02T23:45:31",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 11.222022
+    },
+    {
+      "timestamp": "2022-04-02T23:45:46",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 10.36291
+    },
+    {
+      "timestamp": "2022-04-02T23:47:11",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 8.671723
+    },
+    {
+      "timestamp": "2022-04-02T23:47:26",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 8.30776
+    },
+    {
+      "timestamp": "2022-04-02T23:48:51",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 7.917076
+    },
+    {
+      "timestamp": "2022-04-02T23:49:18",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 6.346957
+    },
+    {
+      "timestamp": "2022-04-02T23:50:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 5.9963868974359
+    },
+    {
+      "timestamp": "2022-04-02T23:50:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 6.78680455128205
+    },
+    {
+      "timestamp": "2022-04-02T23:50:43",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 5.697949
+    },
+    {
+      "timestamp": "2022-04-02T23:50:58",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 5.523182
+    },
+    {
+      "timestamp": "2022-04-02T23:52:23",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 4.143653
+    },
+    {
+      "timestamp": "2022-04-02T23:52:38",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 3.850286
+    },
+    {
+      "timestamp": "2022-04-02T23:54:03",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 3.582412
+    },
+    {
+      "timestamp": "2022-04-02T23:54:18",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 3.048147
+    },
+    {
+      "timestamp": "2022-04-02T23:55:00",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.70018751815981
+    },
+    {
+      "timestamp": "2022-04-02T23:55:00",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.8814992815534
+    },
+    {
+      "timestamp": "2022-04-02T23:55:43",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.512391
+    },
+    {
+      "timestamp": "2022-04-02T23:55:58",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.345917
+    },
+    {
+      "timestamp": "2022-04-02T23:57:23",
+      "instrument_id": "DosTel2",
+      "absorbed_dose_rate": 2.374165
+    },
+    {
+      "timestamp": "2022-04-02T23:59:30",
+      "instrument_id": "DosTel1",
+      "absorbed_dose_rate": 2.016051
+    }
+  ]
+}

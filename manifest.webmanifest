@@ -1,0 +1,9 @@
+{
+  "name": "Beyond Pulse — Crew Health",
+  "short_name": "Beyond Pulse",
+  "description": "Offline-first astronaut health monitoring concept by team Beyond Pulse.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07121d",
+  "theme_color": "#071421"
+}

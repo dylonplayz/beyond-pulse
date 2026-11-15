@@ -1,201 +1,51 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#07111f" />
-    <meta name="description" content="TIDE astronaut health monitoring and mission medical decision support concept." />
-    <title>TIDE — Crew Health</title>
-    
-    
-    
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="app-shell">
-      <aside class="sidebar">
-        <a class="brand" href="#" aria-label="TIDE home">
-          <span class="brand-mark"><span></span><span></span><span></span></span>
-          <span><b>TIDE</b><small>CREW HEALTH SYSTEM</small></span>
-        </a>
-        <div class="mission-card">
-          <span class="eyebrow">ACTIVE MISSION</span>
-          <strong>ARES · TRANSIT 04</strong>
-          <span class="mission-line"><i class="live-dot"></i> DAY 142 <span>·</span> DEEP SPACE</span>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071421">
+  <meta name="description" content="Beyond Pulse — Maya's simulated mission health dashboard.">
+  <title>Beyond Pulse | Maya's Mission Health</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail" aria-label="Main navigation">
+      <a class="brand" href="#today" aria-label="Beyond Pulse home">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 22h7l4-10 7 18 4-9h8"/><circle cx="20" cy="20" r="17"/></svg></span>
+        <span><b>BEYOND</b><strong>PULSE</strong><small>CREW HEALTH SYSTEM</small></span>
+      </a>
+      <div class="rail-label">MISSION CONTROL</div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="today"><span class="nav-icon">◉</span><span>Home</span><small class="nav-count">01</small></button>
+        <button class="nav-item" data-view="trends"><span class="nav-icon">⌁</span><span>Trends</span></button>
+        <button class="nav-item" data-view="checkin"><span class="nav-icon">＋</span><span>Wellness</span></button>
+        <button class="nav-item" data-view="bone"><span class="nav-icon">⌬</span><span>Body health</span></button>
+        <button class="nav-item" data-view="radiation"><span class="nav-icon">✳</span><span>Environment</span></button>
+        <button class="nav-item" data-view="routine"><span class="nav-icon">▦</span><span>Daily plan</span><span id="routine-count" class="count-badge">2</span></button>
+        <button class="nav-item" data-view="care"><span class="nav-icon">↗</span><span>Medical support</span></button>
+      </nav>
+      <div class="rail-bottom">
+        <div class="privacy-note"><span class="lock-icon">◇</span><div><b>ON-DEVICE WORKSPACE</b><small>Private records stay in this browser</small></div></div>
+        <div class="rail-profile"><span class="avatar">M</span><div><b>Maya</b><small>Crew health profile</small></div></div>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <div class="crumb"><span>CREW HEALTH</span><i>/</i><b id="page-crumb">HOME</b></div>
+        <div class="top-actions">
+          <span class="mission-chip"><span class="pulse-dot"></span> MAYA <i>·</i> MISSION SIMULATION</span>
+          <button class="icon-button" id="help-button" aria-label="About this prototype">i</button>
         </div>
-        <nav class="primary-nav" aria-label="Main navigation">
-          <span class="nav-label">WORKSPACE</span>
-          <button class="nav-item active" data-view="astronaut"><span class="nav-icon">◉</span> My health <span class="nav-count">2</span></button>
-          <button class="nav-item" data-view="assistant"><span class="nav-icon">✦</span> Health assistant</button>
-          <button class="nav-item" data-view="medications"><span class="nav-icon">◷</span> Medication plan</button>
-          <button class="nav-item" data-view="consults"><span class="nav-icon">↗</span> Doctor consults</button>
-          <button class="nav-item" data-view="medical"><span class="nav-icon">⌘</span> Crew medical <span class="nav-count alert-count">2</span></button>
-          <button class="nav-item" data-view="ground"><span class="nav-icon">◎</span> Mission health center</button>
-          <span class="nav-label nav-label-spaced">MISSION TOOLS</span>
-          <button class="nav-item" data-view="protocols"><span class="nav-icon">▤</span> Protocol library</button>
-          <button class="nav-item" data-view="data"><span class="nav-icon">⌁</span> Data &amp; sensors</button>
-        </nav>
-        <div class="sidebar-bottom">
-          <div class="security-note"><span class="lock-icon">▣</span><span><b>Local demo storage</b><small>Not encrypted. Use synthetic data only.</small></span></div>
-          <div class="user-chip"><div class="avatar avatar-you">MK</div><span><b>M. KIM</b><small>MISSION SPECIALIST</small></span><span class="more">···</span></div>
-        </div>
-      </aside>
-
-      <main class="main-area">
-        <header class="topbar">
-          <div class="breadcrumb"><span>ARES TRANSIT 04</span><span class="crumb-sep">/</span><b id="crumb-current">MY HEALTH</b></div>
-          <div class="topbar-right">
-            <span class="prototype-badge">SYNTHETIC DEMO · NO REAL HEALTH DATA</span>
-            <button class="sync-status" id="sync-toggle" aria-label="Toggle communications link"><span class="sync-indicator" id="sync-indicator"></span><span id="sync-label">LINK ACTIVE</span><span class="sync-chevron">⌄</span></button>
-            <span class="topbar-divider"></span>
-            <button class="icon-button" aria-label="Notifications">♧<i class="notification-dot"></i></button>
-            <button class="help-button">Help <span>↗</span></button>
-          </div>
-        </header>
-
-        <div class="content-wrap">
-          <section class="view active-view" id="view-astronaut">
-            <div class="page-heading">
-              <div><div class="eyebrow accent">WEDNESDAY · MISSION DAY 142</div><h1>Your health, in context.</h1><p class="subhead">A clear picture of how you’re doing, what’s changing, and what you can do next.</p></div>
-              <button class="button button-primary" id="open-checkin"><span>＋</span> Daily check-in</button>
-            </div>
-
-            <div class="status-banner watch-banner">
-              <div class="status-symbol">↗</div>
-              <div class="status-copy"><div class="status-kicker"><span class="tag tag-watch">PATTERN TO WATCH</span><span class="status-time">Updated 08:42 ship time</span></div><h2>A few recovery signals have shifted together.</h2><p>Your sleep has shortened and resting pulse is above your recent range for 3 days. This can happen for many reasons. Your recent workload may be useful context.</p></div>
-              <button class="text-button" id="scroll-pattern">See why <span>→</span></button>
-            </div>
-
-            <div class="overview-grid">
-              <article class="panel readiness-panel">
-                <div class="panel-head"><div><span class="eyebrow">PERSONAL BASELINE</span><h3>Today’s snapshot</h3></div><button class="quiet-icon" aria-label="More information">···</button></div>
-                <div class="snapshot-main"><div class="snapshot-score"><strong>Steady</strong><span>within your usual range</span></div><div class="ring-wrap"><svg viewBox="0 0 100 100" class="ring-chart" aria-label="Readiness signals 76 out of 100"><circle class="ring-track" cx="50" cy="50" r="42"></circle><circle class="ring-value" cx="50" cy="50" r="42"></circle></svg><div class="ring-center"><b>76</b><span>of 100</span></div></div></div>
-                <div class="baseline-foot"><span><i class="legend-dot dot-teal"></i> 4 signals steady</span><span><i class="legend-dot dot-amber"></i> 2 to watch</span></div>
-                <div class="micro-note"><span class="info-circle">i</span> Your baseline uses the last 21 days of usable data.</div>
-              </article>
-
-              <article class="panel signals-panel">
-                <div class="panel-head"><div><span class="eyebrow">LIVE SIGNALS</span><h3>Body &amp; recovery</h3></div><span class="freshness"><i class="live-dot"></i> 5 min ago</span></div>
-                <div class="signal-list">
-                  <div class="signal-row"><span class="signal-icon heart">♡</span><span class="signal-name">Resting heart rate</span><strong>64 <small>bpm</small></strong><span class="signal-trend trend-up">↑ 5</span><span class="signal-state state-watch">Watch</span></div>
-                  <div class="signal-row"><span class="signal-icon wave">⌁</span><span class="signal-name">HRV</span><strong>48 <small>ms</small></strong><span class="signal-trend trend-down">↓ 8%</span><span class="signal-state state-watch">Watch</span></div>
-                  <div class="signal-row"><span class="signal-icon moon">☾</span><span class="signal-name">Sleep</span><strong>6.2 <small>hrs</small></strong><span class="signal-trend trend-down">↓ 0.9h</span><span class="signal-state state-watch">Watch</span></div>
-                  <div class="signal-row"><span class="signal-icon drop">◈</span><span class="signal-name">Hydration check-in</span><strong>On track</strong><span class="signal-trend trend-flat">—</span><span class="signal-state state-ok">Steady</span></div>
-                  <div class="signal-row"><span class="signal-icon activity">⌁</span><span class="signal-name">Exercise countermeasure</span><strong>Complete</strong><span class="signal-trend trend-flat">Today</span><span class="signal-state state-ok">Steady</span></div>
-                </div>
-                <button class="panel-link" data-view="data">View all signals &amp; coverage <span>→</span></button>
-              </article>
-            </div>
-
-            <div class="lower-grid" id="pattern-section">
-              <article class="panel trend-panel">
-                <div class="panel-head"><div><span class="eyebrow">YOUR HEALTH THREAD</span><h3>Recovery over time</h3></div><button class="select-button">Last 14 days <span>⌄</span></button></div>
-                <div class="chart-legend"><span><i class="chart-key key-pulse"></i> Resting pulse</span><span><i class="chart-key key-sleep"></i> Sleep duration</span><span class="baseline-key"><i></i> Your usual range</span></div>
-                <div class="chart-area">
-                  <div class="chart-y-labels"><span>70</span><span>65</span><span>60</span><span>55</span></div>
-                  <svg class="trend-chart" viewBox="0 0 680 210" preserveAspectRatio="none" role="img" aria-label="Resting pulse and sleep trend over 14 days">
-                    <defs><linearGradient id="pulseFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#51d3c5" stop-opacity=".18"/><stop offset="100%" stop-color="#51d3c5" stop-opacity="0"/></linearGradient></defs>
-                    <rect x="0" y="44" width="680" height="72" rx="4" class="baseline-band" />
-                    <path d="M0,118 C24,110 28,102 52,108 S82,120 104,114 S134,96 156,104 S184,119 208,108 S238,94 260,101 S287,112 312,99 S338,109 364,96 S392,92 416,99 S442,86 468,92 S494,86 520,82 S546,72 572,79 S598,68 624,60 S654,55 680,46 L680,190 L0,190Z" fill="url(#pulseFill)"/>
-                    <path d="M0,118 C24,110 28,102 52,108 S82,120 104,114 S134,96 156,104 S184,119 208,108 S238,94 260,101 S287,112 312,99 S338,109 364,96 S392,92 416,99 S442,86 468,92 S494,86 520,82 S546,72 572,79 S598,68 624,60 S654,55 680,46" class="pulse-line"/>
-                    <path d="M0,78 C30,70 48,90 78,84 S120,72 146,80 S186,85 218,75 S260,70 288,77 S330,88 360,80 S405,66 432,77 S475,75 504,70 S543,62 572,70 S622,64 650,58 S670,60 680,54" class="sleep-line"/>
-                    <line x1="0" y1="44" x2="680" y2="44" class="grid-line"/><line x1="0" y1="80" x2="680" y2="80" class="grid-line"/><line x1="0" y1="116" x2="680" y2="116" class="grid-line"/><line x1="0" y1="152" x2="680" y2="152" class="grid-line"/>
-                    <circle cx="680" cy="46" r="5" class="pulse-point"/><circle cx="680" cy="54" r="4" class="sleep-point"/>
-                  </svg>
-                  <div class="chart-x-labels"><span>Day 129</span><span>Day 132</span><span>Day 135</span><span>Day 138</span><span>Today</span></div>
-                </div>
-                <div class="chart-insight"><span class="insight-spark">✦</span><p><b>What changed:</b> pulse rose gradually as sleep shortened. The timing overlaps with 2 high-workload days. That’s context, not proof of cause.</p><button class="insight-action" id="open-checkin-2">Add context</button></div>
-              </article>
-
-              <article class="panel actions-panel">
-                <div class="panel-head"><div><span class="eyebrow">YOUR NEXT STEP</span><h3>A gentle reset</h3></div><span class="protocol-badge">CREW WELLNESS</span></div>
-                <p class="action-intro">A few low-effort options that fit your current schedule. Choose what feels useful.</p>
-                <div class="action-card"><span class="action-number">01</span><div><b>Protect your next sleep window</b><p>Try the planned wind-down routine. Your schedule shows 7.5 hours available tonight.</p><span class="action-source">MISSION SLEEP PLAN · REV 2.1</span></div><button class="action-check" data-action="sleep" aria-label="Mark sleep step planned">＋</button></div>
-                <div class="action-card"><span class="action-number">02</span><div><b>Recheck how you feel in 4 hours</b><p>A quick energy, hydration and symptom check helps tell if this is settling.</p><span class="action-source">PERSONAL FOLLOW-UP</span></div><button class="action-check" data-action="recheck" aria-label="Schedule recheck">＋</button></div>
-                <button class="button button-outline full-button" id="open-triage">I’m not feeling well <span>→</span></button>
-                <p class="medical-note"><span>ⓘ</span> This is wellness support, not a diagnosis. If you feel worse, contact your crew medical officer.</p>
-              </article>
-            </div>
-
-            <div class="bottom-grid">
-              <article class="panel context-panel"><div class="panel-head"><div><span class="eyebrow">MISSION CONTEXT</span><h3>What else is happening?</h3></div><button class="panel-link">View timeline <span>→</span></button></div><div class="context-items"><div><i class="context-dot dot-violet"></i><b>High workload</b><span>2 days ago · EVA prep</span></div><div><i class="context-dot dot-blue"></i><b>Radiation</b><span>Within mission plan</span></div><div><i class="context-dot dot-orange"></i><b>Cabin environment</b><span>CO₂ &amp; temperature nominal</span></div><div><i class="context-dot dot-green"></i><b>Exercise</b><span>Countermeasure completed today</span></div></div></article>
-              <article class="panel privacy-panel"><span class="privacy-icon">◈</span><div><span class="eyebrow">YOUR DATA, YOUR CHOICE</span><h3>Nothing shared with Earth yet</h3><p>Your daily check-ins are private to you. You choose what to share with the medical team, unless an onboard safety protocol requires escalation.</p><button class="panel-link" data-view="data">See access history <span>→</span></button></div></article>
-            </div>
-            <footer class="disclaimer-footer">TIDE CONCEPT DEMO <span>·</span> All crew data shown are synthetic <span>·</span> Not for medical use</footer>
-          </section>
-
-          <section class="view" id="view-medical">
-            <div class="page-heading"><div><div class="eyebrow accent">ONBOARD MEDICAL OFFICER</div><h1>Crew care, at a glance.</h1><p class="subhead">A prioritized view of open follow-ups and the signals behind them.</p></div><button class="button button-outline">＋ Log an encounter</button></div>
-              <div class="medical-stats"><div class="panel stat-card"><span class="eyebrow">OPEN FOLLOW-UPS</span><strong id="open-followup-count">02</strong><span class="stat-hint">Synthetic demo cases</span></div><div class="panel stat-card"><span class="eyebrow">CREW STATUS</span><strong>04 <small>/ 04</small></strong><span class="stat-hint"><i class="live-dot"></i> Synthetic crew</span></div><div class="panel stat-card"><span class="eyebrow">DATA COVERAGE</span><strong>92<small>%</small></strong><span class="stat-hint">Illustrative only</span></div><div class="panel stat-card"><span class="eyebrow">GROUND MESSAGES</span><strong id="ground-message-count">00</strong><span class="stat-hint">Demo queue count</span></div></div>
-              <div class="medical-layout"><article class="panel queue-panel"><div class="panel-head"><div><span class="eyebrow">CARE QUEUE</span><h3>Needs attention</h3></div><button class="filter-button">All crew⌄</button></div><div id="dynamic-case-list"></div><div class="queue-item selected-case"><span class="queue-priority priority-amber">●</span><div class="queue-person"><div class="avatar avatar-you">MK</div><span><b>M. Kim</b><small>Recovery pattern · 08:42</small></span></div><span class="queue-tag">FOLLOW-UP</span><span class="queue-chevron">›</span></div><div class="queue-item"><span class="queue-priority priority-blue">●</span><div class="queue-person"><div class="avatar avatar-blue">AL</div><span><b>A. Lewis</b><small>Motion sickness check-in · 06:15</small></span></div><span class="queue-tag tag-blue">REVIEW</span><span class="queue-chevron">›</span></div><div class="queue-item queue-resolved"><span class="queue-priority priority-green">●</span><div class="queue-person"><div class="avatar avatar-violet">SR</div><span><b>S. Rao</b><small>Sleep follow-up completed · 07:20</small></span></div><span class="queue-tag tag-green">CLOSED</span><span class="queue-chevron">›</span></div><button class="panel-link queue-link">View full crew timeline <span>→</span></button></article>
-                <article class="panel case-panel"><div class="case-header"><div><span class="eyebrow">CASE T-042 · PRIVATE CLINICAL VIEW</span><h3>M. Kim <span class="case-age">— Recovery pattern</span></h3></div><button class="case-menu">···</button></div><div class="case-summary"><div class="summary-label">EVENT SUMMARY</div><p>3-day change from personal baseline across resting pulse, HRV and sleep. No urgent symptom reported. Workload was elevated 2 days ago.</p><div class="summary-meta"><span>● Data quality: <b>Good</b></span><span>Last updated 08:42 ship time</span></div></div><div class="case-evidence"><div class="summary-label">SUPPORTING OBSERVATIONS</div><div class="evidence-row"><span>Resting pulse</span><b>+5 bpm from recent median</b><span class="evidence-quality">●</span></div><div class="evidence-row"><span>HRV</span><b>−8% from recent median</b><span class="evidence-quality">●</span></div><div class="evidence-row"><span>Sleep</span><b>−0.9 hr vs. personal median</b><span class="evidence-quality">●</span></div></div><div class="case-note"><span class="avatar avatar-you small-avatar">MK</span><p><b>Astronaut note · 08:40</b><br>“Feeling a little more tired after EVA prep. No other symptoms right now.”</p></div><div class="case-actions"><button class="button button-primary" id="ack-case">Acknowledge &amp; plan follow-up</button><button class="button button-outline" id="send-ground">Prepare ground consult ↗</button></div><p class="case-disclaimer">Clinical workflow demo · Confirm findings with approved mission protocols.</p></article></div>
-              <footer class="disclaimer-footer">TIDE CONCEPT DEMO <span>·</span> All crew data shown are synthetic <span>·</span> Access to individual records is logged</footer>
-          </section>
-
-          <section class="view" id="view-assistant">
-            <div class="page-heading"><div><div class="eyebrow accent">ONBOARD · LOCAL ASSISTANT</div><h1>Talk through what’s happening.</h1><p class="subhead">TIDE can organize symptoms, explain what data it sees, and help you reach your crew medical officer.</p></div><span class="local-mode-pill"><i class="live-dot"></i> RUNNING IN DEMO MODE</span></div>
-            <div class="safety-notice"><span>ⓘ</span><p><b>Decision support, not an autonomous doctor.</b> This prototype does not diagnose, prescribe, or replace the crew medical officer. For severe or worsening symptoms, contact the onboard medical officer now; do not wait for an Earth reply.</p></div>
-            <div class="assistant-layout">
-              <article class="panel assistant-panel"><div class="assistant-head"><div class="assistant-avatar">✦</div><div><b>TIDE health assistant</b><small>Demo rules · no cloud connection · synthetic data only</small></div><span class="assistant-status">● AVAILABLE</span></div>
-                <div class="chat-thread" id="assistant-thread" aria-live="polite"><div class="chat-message bot-message"><span class="chat-avatar">T</span><div><p>I can help you record a concern, review your personal trends, or prepare a question for the crew medical officer. I can’t confirm a diagnosis or choose a medicine. What would you like help with?</p><small>Local demo assistant · 08:42 ship time</small></div></div></div>
-                <div class="quick-prompts"><span>START WITH</span><button type="button" data-prompt="I have a new symptom">New symptom</button><button type="button" data-prompt="Help me review my medication plan">Medication plan</button><button type="button" data-prompt="Prepare a consultation with a doctor">Talk to a doctor</button></div>
-                <form class="chat-composer" id="assistant-form"><label class="sr-only" for="assistant-input">Describe what you need help with</label><textarea id="assistant-input" rows="2" placeholder="Describe what you’re noticing…"></textarea><button class="button button-primary" type="submit">Send <span>↑</span></button></form>
-                <p class="chat-footnote">Demo message screening is not a clinically validated emergency detector. Real escalation rules must be approved and tested by mission medical authorities.</p>
-              </article>
-              <aside class="assistant-side"><article class="panel side-card"><span class="eyebrow">YOUR CARE TEAM</span><h3>Help onboard first.</h3><div class="care-contact"><span class="contact-icon">CM</span><div><b>Crew medical officer</b><small>Available onboard · primary contact</small></div><span class="contact-online">●</span></div><div class="care-contact"><span class="contact-icon ground-contact">FS</span><div><b>Flight surgeon</b><small>Earth consultation · delay-aware</small></div><button class="tiny-link" type="button" data-view="consults">Prepare →</button></div><button class="button button-outline full-button" type="button" data-view="medical">Open crew medical desk</button></article>
-                <article class="panel side-card source-card"><span class="eyebrow">HOW TIDE ANSWERS</span><h3>Evidence before confidence.</h3><ul><li>Uses visible data and a small, labeled demo protocol set.</li><li>Shows missing data instead of treating it as normal.</li><li>Routes uncertain or worsening cases to a human.</li></ul><span class="source-version">DEMO RULESET · 0.1 · NOT FOR CLINICAL USE</span></article></aside>
-            </div>
-            <footer class="disclaimer-footer">TIDE CONCEPT DEMO <span>·</span> No clinical AI model is connected <span>·</span> No real alerts are sent</footer>
-          </section>
-
-          <section class="view" id="view-medications">
-            <div class="page-heading"><div><div class="eyebrow accent">PERSONAL MEDICATION PLAN</div><h1>Stay on top of your care plan.</h1><p class="subhead">Reminders, dose logs, side-effect notes, and mission-kit awareness in one place.</p></div><span class="plan-status-pill">DEMO ORDER · CLINICIAN SIGN-OFF REQUIRED</span></div>
-            <div class="safety-notice med-safety"><span>▣</span><p><b>TIDE cannot prescribe or change treatment.</b> This sample plan is fictional. Only an authorized clinician can create or change a medication order; always follow the signed mission plan.</p></div>
-            <div class="medication-layout">
-              <article class="panel medication-panel"><div class="panel-head"><div><span class="eyebrow">TODAY · MISSION DAY 142</span><h3>Scheduled reminders</h3></div><span class="freshness"><i class="live-dot"></i> Local schedule</span></div>
-                <div class="med-order"><div class="med-order-icon">Rx</div><div class="med-order-copy"><span class="tag tag-blue">SYNTHETIC EXAMPLE</span><h3>Medication A</h3><p>Use only as written on your clinician-approved plan. Dose details intentionally omitted from this demo.</p><small>Order ID DEMO-042 · Review date 2030-02-01 · Prescriber: Flight medicine</small></div><span class="order-sign">✓<small>SIGNED<br>DEMO</small></span></div>
-                <div class="dose-row"><div class="dose-time"><b>08:00</b><small>SHIP TIME</small></div><div class="dose-status"><b>Morning reminder</b><small id="morning-dose-status">Scheduled · record only</small></div><button class="button button-outline dose-action" id="dose-am" type="button">Mark taken</button></div>
-                <div class="dose-row"><div class="dose-time"><b>20:00</b><small>SHIP TIME</small></div><div class="dose-status"><b>Evening reminder</b><small id="evening-dose-status">Upcoming · record only</small></div><button class="button button-outline dose-action" id="dose-pm" type="button">Log dose</button></div>
-                <div class="med-log" id="medication-log"><span class="eyebrow">RECENT LOG</span><p>No doses recorded in this browser session.</p></div>
-              </article>
-              <div class="med-side-column"><article class="panel stock-panel"><div class="panel-head"><div><span class="eyebrow">MISSION MED KIT</span><h3>Supply awareness</h3></div><span class="stock-label">SIMULATED</span></div><div class="stock-item"><span class="stock-icon">▤</span><div><b>Medication A · Kit 03</b><small>Stock and expiry example only</small></div><span class="stock-count">12 <small>units</small></span></div><div class="stock-meter"><span></span></div><div class="stock-meta"><span>12 of 20 recorded</span><span>Review: 180 days</span></div><p class="stock-note">Real systems must use the approved formulary, verified storage data, and mission pharmacy records. This demo cannot assess drug potency.</p><button class="button button-outline full-button" id="review-medication" type="button">Request medical review</button></article>
-                <article class="panel side-effect-panel"><span class="eyebrow">HOW ARE YOU FEELING?</span><h3>Record an observation</h3><p>Log a note for the medical team to review. This does not assess side effects.</p><form id="side-effect-form"><label class="sr-only" for="side-effect-note">Observation note</label><textarea id="side-effect-note" rows="3" placeholder="Optional note for your care team…"></textarea><button class="button button-outline full-button" type="submit">Save private note</button></form><small class="private-caption">Private in this local demo until you request review.</small></article></div>
-            </div>
-            <footer class="disclaimer-footer">TIDE CONCEPT DEMO <span>·</span> Fictional medication plan and stock <span>·</span> No prescribing or drug-interaction engine</footer>
-          </section>
-
-          <section class="view" id="view-consults">
-            <div class="page-heading"><div><div class="eyebrow accent">DELAY-AWARE TELEMEDICINE</div><h1>Bring the right details to your doctor.</h1><p class="subhead">Use live consultation when latency allows. For deep space, send a complete case packet and receive a response when it arrives.</p></div><span class="link-state-label" id="consult-link-state">MARS-LIKE PROFILE · ASYNC MODE</span></div>
-            <div class="consult-notice"><span>↗</span><div><b>“Video call” depends on distance.</b><p>A Mars link can have a long round trip and blackout periods. Video can be recorded and sent, but back-and-forth conversation may take too long for urgent care.</p></div><a href="https://ntrs.nasa.gov/api/citations/20250003885/downloads/NASA%20TM20250003885.pdf" target="_blank" rel="noreferrer">NASA latency report ↗</a></div>
-            <div class="consult-layout"><article class="panel consult-form-panel"><div class="panel-head"><div><span class="eyebrow">REQUEST A CLINICIAN CONSULT</span><h3>Prepare a care packet</h3></div><span class="protocol-badge">M. KIM · PRIVATE</span></div><form id="consult-form"><label class="field-label" for="consult-mode">Communication profile</label><select id="consult-mode" class="field-input"><option value="mars">Mars transit · long delay / possible blackout</option><option value="lunar">Lunar mission · several-second one-way latency</option><option value="leo">Near Earth · live consult may be available</option></select><div class="mode-explainer" id="mode-explainer">Default: asynchronous consult. Send a concise summary and receive a signed reply when the link window allows.</div><label class="field-label" for="consult-question">What would you like the clinician to review?</label><textarea id="consult-question" class="field-input consult-text" rows="4" placeholder="Describe the concern and the question for the flight surgeon…"></textarea><label class="attach-control"><input id="consult-attachment" type="file" accept="image/*,video/*,audio/*" /><span>＋ Attach photo, short clip, or voice note</span><small>Demo stores the file name only</small></label><div class="share-options"><label><input id="share-vitals" type="checkbox" checked /> Include relevant vitals and trend</label><label><input id="share-notes" type="checkbox" /> Include my private check-in notes</label></div><button class="button button-primary" type="submit" id="submit-consult">Queue async consult ↗</button></form></article>
-              <aside class="consult-side"><article class="panel consult-steps"><span class="eyebrow">CARE CONTINUITY</span><h3>What happens next</h3><div class="step-row"><span>1</span><div><b>Review sharing</b><small>You choose which private notes to include.</small></div></div><div class="step-row"><span>2</span><div><b>Onboard care continues</b><small>The crew medical officer remains the first human contact.</small></div></div><div class="step-row"><span>3</span><div><b>Ground reply returns</b><small>Signed response queues to the spacecraft; it does not override urgent onboard procedure.</small></div></div></article><article class="panel response-panel"><span class="eyebrow">RETURNED CLINICIAN MESSAGES</span><h3>From Earth to crew</h3><div id="clinician-response-list"><p class="empty-state">No demo responses received yet. A response entered in the Ground Health Center appears here.</p></div><button type="button" class="panel-link" data-view="ground">Open mission health center <span>→</span></button></article></aside>
-            </div>
-            <footer class="disclaimer-footer">TIDE CONCEPT DEMO <span>·</span> No real video or medical data is transmitted <span>·</span> Critical care must not wait on Earth</footer>
-          </section>
-
-          <section class="view" id="view-ground">
-            <div class="page-heading"><div><div class="eyebrow accent">EARTH · MISSION HEALTH CENTER</div><h1>Continuity of care, across distance.</h1><p class="subhead">An illustrative clinical view for handoffs when the link permits; not a connected flight system.</p></div><div class="ground-link-pill"><i class="live-dot"></i> DEMO LINK ACTIVE <span>·</span> LOCAL SIMULATION</div></div>
-            <div class="ground-alert"><span class="ground-alert-icon">↗</span><div><b id="ground-alert-title">Demo link is active · synthetic case T-042 is available</b><p id="ground-alert-detail">This local simulation is not encrypted and no flight surgeon is connected.</p></div><span class="tag tag-watch" id="ground-alert-count">DEMO QUEUE</span></div>
-            <div class="ground-layout"><article class="panel crew-board"><div class="panel-head"><div><span class="eyebrow">MISSION ARES TRANSIT 04</span><h3>Crew health board</h3></div><button class="filter-button">All statuses⌄</button></div><div class="crew-row selected-crew"><div class="avatar avatar-you">MK</div><span class="crew-name"><b>M. Kim</b><small>Mission specialist</small></span><span class="crew-health"><i class="dot-amber"></i> Follow-up</span><span class="crew-sync">08:31 UTC</span></div><div class="crew-row"><div class="avatar avatar-blue">AL</div><span class="crew-name"><b>A. Lewis</b><small>Flight engineer</small></span><span class="crew-health"><i class="dot-blue"></i> Monitor</span><span class="crew-sync">07:56 UTC</span></div><div class="crew-row"><div class="avatar avatar-violet">SR</div><span class="crew-name"><b>S. Rao</b><small>Commander</small></span><span class="crew-health"><i class="dot-green"></i> Steady</span><span class="crew-sync">07:45 UTC</span></div><div class="crew-row"><div class="avatar avatar-orange">JT</div><span class="crew-name"><b>J. Torres</b><small>Mission specialist</small></span><span class="crew-health"><i class="dot-green"></i> Steady</span><span class="crew-sync">07:42 UTC</span></div><div class="privacy-callout"><span>▣</span><p><b>Clinical access only</b><br>Individual records are visible to authorized care staff. Wellbeing check-ins are not shown on this board unless shared for care or escalated under mission policy.</p></div></article>
-            <article class="panel ground-case"><div class="ground-case-head"><div><span class="eyebrow">CLINICAL CONSULT · CASE T-042</span><h3>M. Kim <span class="tag tag-watch">ROUTINE</span></h3></div><span class="record-lock">▣ LOCAL DEMO RECORD</span></div><div class="ground-section"><span class="summary-label">SYNTHETIC DEMO CASE</span><p>Synthetic recovery pattern for interface demonstration only. No clinical record is connected.</p><div id="ground-packet-list"></div></div><div class="ground-section"><span class="summary-label">CASE TIMELINE</span><div class="timeline-event"><i class="timeline-dot timeline-amber"></i><span><b>08:31 UTC</b> · Ground received the clinician handoff packet</span></div><div class="timeline-event"><i class="timeline-dot timeline-teal"></i><span><b>08:20 ship</b> · Astronaut completed symptom check-in; no urgent flags in demo pathway</span></div><div class="timeline-event"><i class="timeline-dot timeline-blue"></i><span><b>Day 139–142</b> · Recovery signals shifted; sensor coverage good</span></div></div><div class="context-strip"><span class="summary-label">MISSION CONTEXT</span><div><span>Workload <b>Elevated</b></span><span>Radiation <b>Within plan</b></span><span>Cabin <b>Nominal</b></span></div></div><label class="response-label" for="clinician-response">SIMULATED CLINICIAN RESPONSE</label><textarea id="clinician-response" placeholder="Write a response using the approved mission protocol…"></textarea><div class="response-footer"><span>▣ Local demo only · not signed or clinically reviewed</span><button class="button button-primary" id="send-response">Queue response to crew ↗</button></div></article></div>
-            <footer class="disclaimer-footer">TIDE CONCEPT DEMO <span>·</span> Illustrative workflow only <span>·</span> No real astronaut or health data</footer>
-          </section>
-
-          <section class="view simple-view" id="view-protocols"><div class="page-heading"><div><div class="eyebrow accent">MISSION REFERENCE</div><h1>Protocol library</h1><p class="subhead">A local, versioned library for approved mission guidance.</p></div></div><div class="panel library-panel"><div class="library-banner"><span>▤</span><div><b>Demo protocols only</b><p>This prototype does not include clinical protocols. In a real mission, medical authorities would review, sign and version every pathway before it becomes available onboard.</p></div></div><div class="library-row"><span class="protocol-icon">✦</span><div><b>Routine wellness follow-up</b><small>Illustrative · Not clinical guidance</small></div><span class="tag tag-watch">DEMO</span></div><div class="library-row"><span class="protocol-icon">⌁</span><div><b>Symptom check-in flow</b><small>Illustrative · Red-flag logic is not configured</small></div><span class="tag tag-watch">DEMO</span></div><div class="library-row"><span class="protocol-icon">◈</span><div><b>Deep-space medical handoff</b><small>Workflow concept · Version 0.1</small></div><span class="tag tag-blue">WORKFLOW</span></div></div></section>
-
-          <section class="view simple-view" id="view-data"><div class="page-heading"><div><div class="eyebrow accent">SENSORS &amp; PROVENANCE</div><h1>Know what the system knows.</h1><p class="subhead">Signal freshness, quality and sharing state are visible at every step.</p></div></div><div class="panel data-panel"><div class="panel-head"><div><span class="eyebrow">TODAY · MISSION DAY 142</span><h3>Signal coverage</h3></div><span class="coverage-total">7 of 9 signals current</span></div><div class="data-table"><div class="data-head"><span>HEALTH SIGNAL</span><span>SOURCE</span><span>FRESHNESS</span><span>ACCESS</span><span>QUALITY</span></div><div class="data-row"><b>Heart rate &amp; HRV</b><span>Wrist sensor · Stream</span><span>5 min ago</span><span><i class="access-private"></i> Private</span><span class="quality-good">● Good</span></div><div class="data-row"><b>Sleep duration</b><span>Wrist sensor · Derived</span><span>08:10 ship</span><span><i class="access-private"></i> Private</span><span class="quality-good">● Good</span></div><div class="data-row"><b>Hydration check-in</b><span>Astronaut · Manual</span><span>07:30 ship</span><span><i class="access-private"></i> Private</span><span class="quality-good">● Complete</span></div><div class="data-row"><b>Cabin environment</b><span>Habitat sensors</span><span>2 min ago</span><span><i class="access-shared"></i> Mission</span><span class="quality-good">● Good</span></div><div class="data-row"><b>Radiation dose</b><span>Dosimeter summary</span><span>12 min ago</span><span><i class="access-shared"></i> Mission</span><span class="quality-good">● Good</span></div><div class="data-row stale-row"><b>Vision screening</b><span>Manual exam</span><span>3 days ago</span><span><i class="access-clinical"></i> Clinical</span><span class="quality-stale">● Due</span></div><div class="data-row missing-row"><b>Blood pressure</b><span>Not connected</span><span>—</span><span><i class="access-private"></i> Private</span><span class="quality-missing">● No data</span></div></div><div class="data-footnote">Derived values are labeled. Missing or stale data never silently count as normal.</div></div><div class="panel access-panel"><div><span class="eyebrow">ACCESS HISTORY</span><h3>Your recent data access</h3></div><div class="access-row"><span class="access-avatar">CM</span><span><b>Crew medical officer</b><small>Opened shared recovery case T-042</small></span><time>08:44 ship</time></div><div class="access-row"><span class="access-avatar access-ground">FC</span><span><b>Flight surgeon · Ground</b><small>Has not viewed your personal check-ins</small></span><time>—</time></div><p class="access-footnote">This is an illustrative access-history mockup, not a security audit log.</p></div></section>
-        </div>
-      </main>
+      </header>
+      <main id="content" tabindex="-1"></main>
+      <footer class="global-footer"><span>BEYOND PULSE <i>·</i> MAYA'S MISSION HEALTH</span><span><span class="footer-dot"></span> SIMULATION MODE <i>·</i> SOURCE-LABELED</span></footer>
     </div>
-
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <dialog class="modal" id="triage-modal">
-      <form method="dialog" class="modal-card" id="triage-form">
-        <div class="modal-top"><span class="eyebrow accent">PRIVATE CHECK-IN · NOT A DIAGNOSIS</span><button class="modal-close" aria-label="Close">×</button></div>
-        <div id="triage-step-1"><h2>What are you noticing?</h2><p class="modal-intro">A few focused questions help you decide what kind of support to seek. This demo does not diagnose or provide medical advice.</p><label class="field-label" for="symptom">Choose the closest fit</label><select id="symptom" class="field-input"><option value="tired">More tired than usual</option><option value="headache">Headache or head pressure</option><option value="nausea">Nausea or dizziness</option><option value="pain">Pain or injury</option><option value="other">Something else</option></select><label class="field-label" for="worse">Is it severe, rapidly worsening, or making it hard to do your mission duties?</label><select id="worse" class="field-input"><option value="no">No</option><option value="yes">Yes</option><option value="unsure">I’m not sure</option></select><div class="modal-actions"><button class="button button-outline" value="cancel">Cancel</button><button type="button" class="button button-primary" id="continue-triage">Continue →</button></div></div>
-        <div id="triage-step-2" hidden><div class="result-icon">✦</div><span class="tag tag-blue">DEMO CHECK-IN PATHWAY</span><h2 id="triage-result-title">Let’s make a clear plan.</h2><p class="modal-intro" id="triage-result-text"></p><div class="triage-result-box"><b>What this means</b><p>This is not a diagnosis and does not rule out a medical problem. If you feel worse or are worried, contact your crew medical officer now.</p></div><div class="modal-actions"><button type="button" class="button button-outline" id="back-triage">← Edit answers</button><button type="button" class="button button-primary" id="share-triage">Prepare care handoff</button></div></div>
-      </form>
-    </dialog>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="modal" class="modal"><div class="modal-inner"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div id="modal-body"></div></div></dialog>
+  <script src="app.js"></script>
+</body>
 </html>
