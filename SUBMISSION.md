@@ -1,50 +1,81 @@
-# NASA Space Apps submission notes
+# Space Apps submission copy
 
-## Project details
+Use this sheet to fill the Beyond Pulse fields in the 2026 NASA Space Apps project form. Replace the demo URL with your actual public demo link and add the original source/license links for any third-party visuals used in the video.
 
-- **Team:** Beyond Pulse
-- **Project title:** Beyond Pulse
-- **Challenge:** [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/)
-- **Repository:** https://github.com/dylonplayz/beyond-pulse
-- **Demo video:** Add the public video link after uploading; check it in a private/incognito window.
+## Project Name
 
-## Short description
+**Beyond Pulse: Crew Health**
 
-Beyond Pulse is a source-aware crew health workspace for Maya, a fictional astronaut profile. It brings simulated health trends, wellbeing, activity, body-health observations, mission context, and clinician handoff into one clear interface, with historical NASA radiation data shown separately from fictional crew values.
+## Summary
 
-## Project description
+Paste this into the 50–200 word Summary field:
 
-Long-duration missions make it harder for a crew member to notice how health indicators are changing and to communicate a useful, organized picture to medical support. Beyond Pulse explores a crew-centered answer: one workspace that connects trends, wellbeing, activity and routines, body-health observations, mission environment, and a reviewed clinician handoff.
+> Beyond Pulse is a crew-centered health-monitoring prototype built around Maya, a fictional astronaut on a long-duration mission. It brings her simulated health trends, wellbeing, activity, body-health observations, daily routine, and mission context into one interface. Historical NASA OSDR RadLab radiation data and NASA EDA environmental archive data are shown separately from Maya’s simulated readings, with source labels throughout. The quantitative-ultrasound (QUS) view records speed-of-sound (SOS) observations only; it does not estimate bone mineral density. An optional, consent-gated AI brief summarizes selected synthetic values, while the medical-support workflow lets the user review and export a handoff. Beyond Pulse explores how source-aware software can help crew understand changes and communicate clearly. This prototype does not connect to NASA flight sensors, diagnose, or send medical data automatically.
 
-The demonstration follows Maya, a fictional astronaut on a seven-day mission scenario. Her generated values are explicitly labeled as simulated. A separate Environment view presents historical NASA OSDR RadLab archive data, preserving the distinction between research/environment records and a crew member’s health. The body-health workflow demonstrates quantitative-ultrasound speed-of-sound (SOS) observations; it does not infer bone mineral density. An optional, consent-gated AI brief summarizes selected fictional values, while the handoff remains under user review and is exported locally.
+## Project Details
 
-Beyond Pulse is a prototype, not a NASA flight system or medical device. It does not connect to spacecraft sensors, diagnose, or send data automatically to a clinician. The project demonstrates how source-aware software could help a crew member understand a changing health picture and prepare a clear handoff for authorized medical personnel.
+Paste into the Project Details rich-text field:
 
-## NASA data and resources used
+> Beyond Pulse is a browser-based health workspace for Maya, a fictional astronaut. Its home and trends views organize a seven-day simulated mission scenario; wellness, activity, and daily-plan views bring related crew tasks together. The body-health view records quantitative-ultrasound speed-of-sound observations without converting them into a bone-density result. The environment view keeps historical NASA OSDR RadLab and EDA archive records separate from Maya’s fictional health values. An optional AI brief can summarize selected scenario values after the user consents, and Medical Support lets the user review and export a handoff.
+>
+> The prototype uses HTML, CSS, and JavaScript for the interface and a Python standard-library server for local hosting and NASA archive requests. Its design emphasizes clear source labels, simple trends, and a user-reviewed care handoff. These choices demonstrate how information from different sources could be made easier for a crew member to understand and discuss with medical personnel. The app uses no NASA flight hardware or live crew sensor feed, has no clinical validation, and is not a diagnostic tool.
 
-- NASA OSDR RadLab archive data is bundled in `data/radlab-iss-sample.json` and identified in the Environment view as historical archive data.
-- The app can query public NASA OSDR RadLab and Environmental Data Application (EDA) archives. These are research/archive sources, not current astronaut biometrics or live flight-system data.
-- NASA’s Flexible Ultrasound System, Human Research Program, and Brahms/Ejenta materials informed the concept and design references; Beyond Pulse does not claim to run those systems or use NASA flight hardware.
+## Project Demonstration
 
-References: [NASA OSDR RadLab overview](https://visualization.osdr.nasa.gov/radlab/gui/overview/), [RadLab API guide](https://visualization.osdr.nasa.gov/radlab/gui/data-api/), [NASA OSDR EDA](https://visualization.osdr.nasa.gov/eda/), [NASA Flexible Ultrasound System](https://www.nasa.gov/glenn/glenn-expertise-space-exploration/human-health-performance/exploration-medical-technologies/flexible-ultrasound-system/), [NASA Human Research Program](https://www.nasa.gov/hrp/risks/), and [NASA Brahms/Ejenta overview](https://www.nasa.gov/technology/tech-transfer-spinoffs/astronaut-artificial-intelligence-monitors-patients-at-home/).
+This field takes a **link**, not a written description. Provide either a publicly accessible video of **30 seconds or less** or a presentation of **no more than 7 slides**. Set sharing so judges need no password, permission, or account. The NASA portal says the project link itself must also be publicly accessible.
 
-## AI disclosure
+Suggested 30-second screen-recording narration:
 
-AI tools assisted with project ideation and software development. The app has an optional OpenAI-powered summary that runs only after the user consents and selects fictional Maya scenario values. A local summary is available without the API. The feature is not a trained medical AI, does not diagnose, and does not make treatment decisions. Disclose any AI image or video tools actually used in the submitted demo materials as well.
+> Meet Maya, a fictional crew member on a long-duration mission. Beyond Pulse brings her simulated health trends, wellbeing, exercise, and daily plan together. Body health records ultrasound speed of sound without claiming a bone-density result. Historical NASA archive data stays separate from her fictional readings. With consent, an AI brief summarizes selected simulation values, and Maya can review a handoff for medical support. Beyond Pulse: clearer health context for the journey.
 
-## Suggested 60-second demo
+## Project link
 
-1. **0–8 sec:** Introduce Maya and the challenge: health information in a long mission needs to be understandable and connected.
-2. **8–20 sec:** Show the home dashboard and a trend, pointing out that Maya’s values are clearly marked simulated.
-3. **20–30 sec:** Show body health and explain that the QUS example reports speed of sound only; no bone-density score is inferred.
-4. **30–40 sec:** Show Environment and distinguish the historical NASA RadLab archive from Maya’s fictional values.
-5. **40–50 sec:** Show the optional AI brief and its consent step.
-6. **50–60 sec:** Show the reviewed medical handoff and close on the goal: helping a crew member understand their health picture and communicate it clearly.
+Paste this full URL into the Project field:
 
-## Before clicking Submit
+`https://github.com/dylonplayz/beyond-pulse`
 
-- Add every registered teammate to the project page and verify the team and challenge selection.
-- Add the final public demo link and any required media.
-- Include the GitHub repository and NASA/third-party references.
-- Complete the platform’s AI-use disclosure and accept the submission terms.
-- Click the final submit control and confirm the project page shows **Submitted**.
+## Use of Super Intelligence (SI)
+
+The form’s SI field is for disclosure. Select the applicable options shown in its menu, then paste:
+
+> OpenAI ChatGPT/Codex assisted project ideation, writing, and software development. Beyond Pulse also has an optional OpenAI Responses API feature that summarizes only user-selected fictional Maya scenario values after explicit consent. It is a general-purpose summary feature, not a trained medical AI; it does not diagnose or recommend treatment. The seven-day Maya health scenario is synthetic and was generated by the app. NASA archive data is kept separately and is not AI-generated.
+
+Important portal requirements shown in the form:
+
+- If any submitted image or video contains SI-generated visuals, visibly label those visuals **“AI-generated.”** Do not include NASA logos, flags, or mission identifiers in generated content.
+- If you use AI-generated audio, disclose it in the descriptive text and media metadata.
+- Disclose AI assistance with code/text/data in the project description and repository notes, as above.
+- Select image/video/audio generation categories only if those tools were actually used in the submitted project or demo. If the Maya model or ISS interior in your video is downloaded artwork, credit its original source and license under Space Agency Partner & Other Data.
+
+## NASA Data
+
+Add these as individual link rows under **NASA Data** (the form asks for a resource name and full URL):
+
+| Link Text | Link URL |
+|---|---|
+| NASA OSDR RadLab — historical radiation archive and bundled sample | https://visualization.osdr.nasa.gov/radlab/gui/overview/ |
+| NASA OSDR RadLab API guide | https://visualization.osdr.nasa.gov/radlab/gui/data-api/ |
+| NASA OSDR Environmental Data Application (EDA) | https://visualization.osdr.nasa.gov/eda/ |
+| NASA EDA API guide | https://visualization.osdr.nasa.gov/eda/api_reference |
+| NASA Flexible Ultrasound System — concept reference; no flight-device connection | https://www.nasa.gov/glenn/glenn-expertise-space-exploration/human-health-performance/exploration-medical-technologies/flexible-ultrasound-system/ |
+| NASA Human Research Program — spaceflight health background | https://www.nasa.gov/hrp/risks/ |
+| NASA Brahms/Ejenta — monitoring design reference only | https://www.nasa.gov/technology/tech-transfer-spinoffs/astronaut-artificial-intelligence-monitors-patients-at-home/ |
+
+## Space Agency Partner & Other Data
+
+Add the following if the corresponding tools are used in your submitted project/demo:
+
+| Link Text | Link URL |
+|---|---|
+| OpenAI API documentation — optional AI summary feature | https://developers.openai.com/api/docs/ |
+| Beyond Pulse source code | https://github.com/dylonplayz/beyond-pulse |
+
+Also add the **original source page, creator, and license** for any downloaded Maya/astronaut model, ISS interior model or scan, music, sound, font, or other external media that appears in the submitted demo. Do not leave an asset uncredited; list only tools and assets actually used.
+
+## Final checks
+
+- Use the actual project title and paste the summary/details above.
+- Add the demo link and repository link; open each in a private browser window to confirm access.
+- Include all sources/assets and complete the SI disclosure truthfully. Add an “AI-generated” watermark to any generated visuals included in the demo.
+- Read the terms and originality declarations. Check them only if your team can truthfully confirm them and has listed external assets and permissions.
+- Save Progress, complete every required section, then choose **Submit for Judging**. Confirm the page reports the project as submitted.
